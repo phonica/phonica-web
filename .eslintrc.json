@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": ["google", "plugin:import/errors", "plugin:import/warnings"],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-console": 1,
+    "prefer-const": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  }
+}

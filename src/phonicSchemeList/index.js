@@ -1,7 +1,8 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import graphql from 'react-apollo';
-const PhonicSchemeList = ({ data: { loading, error, phonicSchemes } }) => {
+
+const PhonicSchemeList = ({data: {loading, error, phonicSchemes}}) => {
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -15,10 +16,10 @@ const PhonicSchemeList = ({ data: { loading, error, phonicSchemes } }) => {
 
   return (
     <ul>
-      {phonicSchemes.map(ps => (
-        <li key={ps.id} onClick={handleClick}>
+      {phonicSchemes.map((ps) => (
+        <div key={ps.id} onClick={handleClick}>
           {ps.name} - {ps.description}
-        </li>
+        </div>
       ))}
     </ul>
   );

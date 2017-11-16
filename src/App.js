@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
-import ApolloClient from 'apollo-client';
-import { HttpLink, InMemoryCache } from 'apollo-client-preset';
-import { ApolloProvider } from 'react-apollo';
+import React, {Component} from 'react';
 import Phonicschemesdata from './phonicSchemeList';
 
-const client = new ApolloClient({
-  link: new HttpLink({
-    uri: 'http://localhost:8000/graphql'
-  }),
-  opts: {
-    mode: 'no-cors'
-  },
-  cache: new InMemoryCache().restore({})
-});
+// const PhonicSchemeList = ({ data: { loading, error, phonicSchemes } }) => {
+//   if (loading) {
+//     return <p>Loading...</p>;
+//   }
+//   if (error) {
+//     return <p>{error.message}</p>;
+//   }
 
+//   const handleClick = () => {
+//     console.log('this is:', this);
+//   };
+
+//   return (
+//     <ul>
+//       {phonicSchemes.map(ps => (
+//         <li key={ps.id} onClick={handleClick}>
+//           {ps.name} - {ps.description}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// };
+
+// const Phonicschemesdata = graphql(phonicSchemeListQuery)(PhonicSchemeList);
 class App extends Component {
   render() {
     return (
