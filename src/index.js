@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'http://localhost:8000/graphql',
+    uri: 'https://serene-sands-14266.herokuapp.com/graphql',
   }),
   cache: new InMemoryCache(),
 });

@@ -5,7 +5,8 @@ import {graphql} from 'react-apollo';
 const Home = ({data: {phonicSchemes = []}}) =>
   phonicSchemes.map((ps) => (
     <div key={ps.id}>
-      {ps.name} - {ps.description}
+      <h2>{ps.name}</h2>
+      <p>{ps.description}</p>
     </div>
   ));
 
