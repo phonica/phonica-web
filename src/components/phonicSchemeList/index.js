@@ -8,7 +8,7 @@ const phonicSchemesList = (props) => {
     return <p> Loading...</p>;
   } else {
     return props.phonicSchemes.map((ps) => (
-      <div key={ps.id} onClick={props.onClick}>
+      <div key={ps.id} id={ps.id} onClick={props.onClick}>
         <h2>{ps.name}</h2>
         <p>{ps.description}</p>
       </div>

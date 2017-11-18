@@ -20,11 +20,12 @@ class Home extends Component {
   }
   /**
  * Click handler
+ * @param {event} e - the click event
  * return {void}
  * @memberof Home
  */
   onClick(e) {
-    console.log('I am in Home', e.target);
+    console.log('Event target', e.currentTarget.id);
   }
 }
 export default Home;
