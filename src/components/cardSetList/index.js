@@ -2,7 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 
-const cardSets = ({cardSets, loading}) => {
+const cardSetList = ({cardSets, loading}) => {
   if (loading) {
     return <p> Loading...</p>;
   } else {
@@ -31,7 +31,10 @@ const cardSetsQuery = gql`
 
 export default graphql(cardSetsQuery, {
   props: ({ownProps, data: {loading, cardSets}}) => ({
+    variables: {
+      id: ownProps.schemeChoice,
+    },
     cardSets: cardSets,
     loading: loading,
   }),
-})(cardSets);
+})(cardSetList);

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Phonicschemelist from '../components/phonicSchemeList';
-import Cardsets from '../components/cardSets';
+import Cardsetlist from '../components/cardSetList';
 
 /**
  * @class Home
@@ -16,7 +16,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {schemeChoice: null, step: 1, cardSet: []};
-    this.onClick = this.onClick.bind(this);
+    this.handleSchemeChoice = this.handleSchemeChoice.bind(this);
   }
   /**
  * @return {ReactElement}
@@ -26,11 +26,11 @@ class Home extends Component {
     if (this.state.step === 1) {
       return (
         <div>
-          <Phonicschemelist onClick={this.onClick} />
+          <Phonicschemelist onClick={this.handleSchemeChoice} />
         </div>
       );
     } else if (this.state.step === 2) {
-      return <Cardsets />;
+      return <Cardsetlist schemeChoice={this.state.schemeChoice} />;
     }
   }
   /**
@@ -39,9 +39,8 @@ class Home extends Component {
  * return {void}
  * @memberof Home
  */
-  onClick(e) {
+  handleSchemeChoice(e) {
     this.setState({schemeChoice: e.currentTarget.id, step: 2});
-    console.log('Event target', e.currentTarget.id);
   }
 }
 export default Home;
