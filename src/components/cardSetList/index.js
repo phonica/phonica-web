@@ -15,12 +15,11 @@ const cardSetList = ({cardSets, loading}) => {
 };
 
 const cardSetsQuery = gql`
-  query cardSetsQuery {
-    cardSets {
-      id
+  query cardSetsQuery($schemeChoice: ID) {
+    cardSets(phonicSchemeUuid: $schemeChoice) {
       name
+      id
       flashcards {
-        order
         grapheme {
           grapheme
         }
@@ -32,7 +31,7 @@ const cardSetsQuery = gql`
 export default graphql(cardSetsQuery, {
   props: ({ownProps, data: {loading, cardSets}}) => ({
     variables: {
-      id: ownProps.schemeChoice,
+      schemeChoice: ownProps.schemeChoice,
     },
     cardSets: cardSets,
     loading: loading,
