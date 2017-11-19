@@ -3,7 +3,6 @@ import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 
 const phonicSchemesList = (props) => {
-  console.log(props.onClick);
   if (props.loading) {
     return <p> Loading...</p>;
   } else {
