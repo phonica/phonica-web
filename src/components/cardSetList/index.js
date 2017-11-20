@@ -2,13 +2,17 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 
+import Miniflashcard from '../miniFlashcards';
+
 const cardSetList = ({cardSets, loading}) => {
+  console.log('cardsets from Home: ', cardSets);
   if (loading) {
     return <p> Loading...</p>;
   } else {
     return cardSets.map((cs) => (
       <div key={cs.id} id={cs.id}>
         <h2>{cs.name}</h2>
+        <Miniflashcard miniFlashcards={cs} />
       </div>
     ));
   }
@@ -20,6 +24,7 @@ const cardSetsQuery = gql`
       name
       id
       flashcards {
+        id
         grapheme {
           grapheme
         }
