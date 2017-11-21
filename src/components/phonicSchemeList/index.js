@@ -8,8 +8,16 @@ const phonicSchemesList = (props) => {
     return <p> Loading...</p>;
   } else {
     return props.phonicSchemes.map((ps) => (
-      <div key={ps.id} style={{width: '80%', margin: 'auto'}}>
-        <Grid className="demo-grid-1" style={{display: 'flex'}}>
+      <div
+        key={ps.id}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '40%',
+          margin: 'auto',
+        }}
+      >
+        <Grid className="demo-grid-1">
           <Cell col={4}>
             <Card
               shadow={1}

@@ -35,7 +35,16 @@ class Home extends Component {
   render() {
     if (this.state.step === 1) {
       return (
-        <div>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignContent: 'center',
+            justifyContent: 'center',
+            width: '80vmin',
+            margin: 'auto',
+          }}
+        >
           <Phonicschemelist onClick={this.handleSchemeChoice} />
         </div>
       );
@@ -92,7 +101,7 @@ class Home extends Component {
    */
   handleFlashcardClick(e, length) {
     if (this.state.currentCard < length - 1) {
-      this.setState({currentCard: (this.state.currentCard += 1)});
+      this.setState({currentCard: this.state.currentCard + 1});
     } else {
       this.setState({currentCard: 0});
     }

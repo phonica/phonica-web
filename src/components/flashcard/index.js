@@ -24,7 +24,7 @@ const flashcard = ({handleClick, currentCard, loading, cardSets}) => {
             alignItems: 'center',
             justifyContent: 'center',
             width: '90vmin',
-            height: '80%',
+            height: '80vmin',
             userSelect: 'none',
             margin: 'auto',
             background: '#3E4EB8',
