@@ -1,17 +1,41 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
+import {Card, Grid, CardTitle} from 'react-mdl';
 
-const flashcard = (props) => {
-  console.log(props);
-  if (props.loading) {
+const flashcard = ({handleClick, currentCard, loading, cardSets}) => {
+  if (loading) {
     return <p>Loading...</p>;
   } else {
-    return props.cardSets[0].flashcards.map((fc) => (
-      <div key={fc.id} id={fc.id}>
-        <h1>{fc.grapheme.grapheme}</h1>
-      </div>
-    ));
+    const cardSet = cardSets[0].flashcards;
+    const numberOfCards = cardSet.length;
+    const fc = cardSet[currentCard];
+    return (
+      <Grid
+        id={fc.id}
+        key={fc.id}
+        className="demo-grid-1"
+        onClick={(e) => handleClick(e, numberOfCards)}
+      >
+        <Card
+          shadow={1}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '256px',
+            height: '150px',
+            background: '#3E4EB8',
+          }}
+        >
+          <CardTitle>
+            <p style={{color: '#fff', fontSize: '5em'}}>
+              {fc.grapheme.grapheme}
+            </p>
+          </CardTitle>
+        </Card>
+      </Grid>
+    );
   }
 };
 

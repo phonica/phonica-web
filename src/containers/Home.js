@@ -16,16 +16,23 @@ class Home extends Component {
    */
   constructor(props) {
     super(props);
-    this.state = {setChoice: null, schemeChoice: null, step: 1, cardSet: []};
+    this.state = {
+      currentCard: 0,
+      setChoice: null,
+      schemeChoice: null,
+      step: 1,
+      cardSet: [],
+      cardSetLength: null,
+    };
     this.handleSchemeChoice = this.handleSchemeChoice.bind(this);
     this.handleSetChoice = this.handleSetChoice.bind(this);
+    this.handleFlashcardClick = this.handleFlashcardClick.bind(this);
   }
   /**
  * @return {ReactElement}
  * @memberof Home
  */
   render() {
-    console.log('render called');
     if (this.state.step === 1) {
       return (
         <div>
@@ -40,7 +47,13 @@ class Home extends Component {
         />
       );
     } else if (this.state.step === 3) {
-      return <Flashcard setChoice={this.state.setChoice} />;
+      return (
+        <Flashcard
+          handleClick={this.handleFlashcardClick}
+          setChoice={this.state.setChoice}
+          currentCard={this.state.currentCard}
+        />
+      );
     }
   }
   /**
@@ -58,6 +71,31 @@ class Home extends Component {
    */
   handleSetChoice(e) {
     this.setState({setChoice: e.currentTarget.id, step: 3});
+  }
+
+  /**
+   *
+   *
+   * @param {any} length
+   * @memberof Home
+   */
+  //   getSetLength(length) {
+  //     this.setState({cardSetLength: length});
+  //   }
+
+  /**
+   *
+   *
+   * @param {any} e
+   * @param {any} length
+   * @memberof Home
+   */
+  handleFlashcardClick(e, length) {
+    if (this.state.currentCard < length - 1) {
+      this.setState({currentCard: (this.state.currentCard += 1)});
+    } else {
+      this.setState({currentCard: 0});
+    }
   }
 }
 

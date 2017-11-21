@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
-import {Cell, Card, CardText, Grid, CardTitle} from 'react-mdl';
+import {Card, CardText, Grid, CardTitle} from 'react-mdl';
 
 import Miniflashcard from '../miniFlashcards';
 
