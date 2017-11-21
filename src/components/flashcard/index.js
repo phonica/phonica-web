@@ -23,13 +23,15 @@ const flashcard = ({handleClick, currentCard, loading, cardSets}) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '256px',
-            height: '150px',
+            width: '90vmin',
+            height: '80%',
+            userSelect: 'none',
+            margin: 'auto',
             background: '#3E4EB8',
           }}
         >
           <CardTitle>
-            <p style={{color: '#fff', fontSize: '5em'}}>
+            <p style={{color: '#fff', fontSize: '55vmin'}}>
               {fc.grapheme.grapheme}
             </p>
           </CardTitle>
