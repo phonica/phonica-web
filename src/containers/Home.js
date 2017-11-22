@@ -41,7 +41,6 @@ class Home extends Component {
             flexWrap: 'wrap',
             alignContent: 'center',
             justifyContent: 'center',
-            width: '80vmin',
             margin: 'auto',
           }}
         >
@@ -50,10 +49,20 @@ class Home extends Component {
       );
     } else if (this.state.step === 2) {
       return (
-        <Cardsetlist
-          handleSetChoice={this.handleSetChoice}
-          schemeChoice={this.state.schemeChoice}
-        />
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignContent: 'center',
+            justifyContent: 'center',
+            margin: 'auto',
+          }}
+        >
+          <Cardsetlist
+            handleSetChoice={this.handleSetChoice}
+            schemeChoice={this.state.schemeChoice}
+          />
+        </div>
       );
     } else if (this.state.step === 3) {
       return (

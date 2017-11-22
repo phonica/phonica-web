@@ -13,8 +13,6 @@ const phonicSchemesList = (props) => {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          width: '40%',
-          margin: 'auto',
         }}
       >
         <Grid className="demo-grid-1">

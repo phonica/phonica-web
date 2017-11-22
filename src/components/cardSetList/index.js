@@ -14,7 +14,7 @@ const cardSetList = (props) => {
         key={cs.id}
         id={cs.id}
         onClick={props.handleSetChoice}
-        style={{width: '80%', margin: 'auto'}}
+        style={{margin: 'auto'}}
       >
         <Grid className="demo-grid-1" style={{display: 'flex'}}>
           <Card
@@ -32,7 +32,8 @@ const cardSetList = (props) => {
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'wrap',
-                alignContent: 'space-around',
+                alignContent: 'center',
+                justifyContent: 'space-around',
               }}
             >
               <Miniflashcard miniFlashcards={cs} />
