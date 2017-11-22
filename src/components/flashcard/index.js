@@ -23,11 +23,11 @@ const flashcard = ({
         shadow={1}
         style={{
           justifyContent: 'center',
-          width: '90vmin',
+          width: '100vmin',
+          marginTop: '20px',
           height: '80vmin',
           userSelect: 'none',
           margin: 'auto',
-          background: '#3E4EB8',
         }}
       >
         <CardTitle
@@ -38,7 +38,6 @@ const flashcard = ({
             style={{
               height: '80vmin',
               lineHeight: 'normal',
-              color: '#fff',
               margin: 'auto',
               fontSize: '55vmin',
             }}
@@ -46,11 +45,7 @@ const flashcard = ({
             {fc.grapheme.grapheme}
           </p>
         </CardTitle>
-        <Button
-          onClick={returnClick}
-          colored
-          style={{alignSelf: 'flex-end', color: '#fff'}}
-        >
+        <Button onClick={returnClick} colored style={{alignSelf: 'flex-end'}}>
           Return
         </Button>
       </Card>

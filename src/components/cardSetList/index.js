@@ -19,16 +19,15 @@ const cardSetList = (props) => {
         <Grid className="demo-grid-1" style={{display: 'flex'}}>
           <Card
             shadow={1}
-            style={{width: '256px', height: '120px', background: '#3E4EB8'}}
+            style={{width: '256px', height: '120px', background: '#fff'}}
           >
             <CardTitle
               expand
               style={{
-                color: '#fff',
                 justifyContent: 'center',
               }}
             >
-              <h4 style={{marginTop: '0'}}>{cs.name}</h4>
+              <h4 style={{fontSize: '3em', marginTop: '0'}}>{cs.name}</h4>
             </CardTitle>
             <CardText
               style={{

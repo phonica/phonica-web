@@ -18,15 +18,18 @@ const phonicSchemesList = (props) => {
           <Cell col={4}>
             <Card
               shadow={1}
-              style={{width: '256px', height: '120px', background: '#3E4EB8'}}
+              style={{width: '256px', height: '100px', background: '#fff'}}
               id={ps.id}
               onClick={props.onClick}
             >
-              <CardTitle
-                expand
-                style={{alignItems: 'flex-start', color: '#fff'}}
-              >
-                <h4 style={{marginTop: '0'}}>{ps.name}</h4>
+              <CardTitle>
+                <h4
+                  style={{
+                    marginTop: '0',
+                  }}
+                >
+                  {ps.name}
+                </h4>
               </CardTitle>
               <CardText style={{flexGrow: '1'}}>{ps.description}</CardText>
             </Card>
