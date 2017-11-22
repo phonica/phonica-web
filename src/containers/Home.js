@@ -124,7 +124,7 @@ class Home extends Component {
    * @memberof Home
    */
   returnClick() {
-    this.setState({step: 2});
+    this.setState({step: 2, currentCard: 0});
   }
 }
 
