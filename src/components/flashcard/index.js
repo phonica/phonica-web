@@ -1,9 +1,15 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
-import {Card, Grid, CardTitle} from 'react-mdl';
+import {Card, Button, CardTitle} from 'react-mdl';
 
-const flashcard = ({handleClick, currentCard, loading, cardSets}) => {
+const flashcard = ({
+  returnClick,
+  handleClick,
+  currentCard,
+  loading,
+  cardSets,
+}) => {
   if (loading) {
     return <p>Loading...</p>;
   } else {
@@ -11,32 +17,43 @@ const flashcard = ({handleClick, currentCard, loading, cardSets}) => {
     const numberOfCards = cardSet.length;
     const fc = cardSet[currentCard];
     return (
-      <Grid
+      <Card
         id={fc.id}
         key={fc.id}
-        className="demo-grid-1"
-        onClick={(e) => handleClick(e, numberOfCards)}
+        shadow={1}
+        style={{
+          justifyContent: 'center',
+          width: '90vmin',
+          height: '80vmin',
+          userSelect: 'none',
+          margin: 'auto',
+          background: '#3E4EB8',
+        }}
       >
-        <Card
-          shadow={1}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '90vmin',
-            height: '80vmin',
-            userSelect: 'none',
-            margin: 'auto',
-            background: '#3E4EB8',
-          }}
+        <CardTitle
+          style={{width: '100%'}}
+          onClick={(e) => handleClick(e, numberOfCards)}
         >
-          <CardTitle>
-            <p style={{color: '#fff', fontSize: '55vmin'}}>
-              {fc.grapheme.grapheme}
-            </p>
-          </CardTitle>
-        </Card>
-      </Grid>
+          <p
+            style={{
+              height: '80vmin',
+              lineHeight: 'normal',
+              color: '#fff',
+              margin: 'auto',
+              fontSize: '55vmin',
+            }}
+          >
+            {fc.grapheme.grapheme}
+          </p>
+        </CardTitle>
+        <Button
+          onClick={returnClick}
+          colored
+          style={{alignSelf: 'flex-end', color: '#fff'}}
+        >
+          Return
+        </Button>
+      </Card>
     );
   }
 };

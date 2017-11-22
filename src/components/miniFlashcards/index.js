@@ -6,7 +6,7 @@ const Flashcards = (props) => {
   );
   return graphemes.map((gr) => (
     <div key={gr.id} id={gr.id} className="demo-grid-ruler">
-      <p>{gr.grapheme.grapheme}</p>
+      <p style={{margin: '5px'}}>{gr.grapheme.grapheme}</p>
     </div>
   ));
 };

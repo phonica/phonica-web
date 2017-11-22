@@ -27,6 +27,7 @@ class Home extends Component {
     this.handleSchemeChoice = this.handleSchemeChoice.bind(this);
     this.handleSetChoice = this.handleSetChoice.bind(this);
     this.handleFlashcardClick = this.handleFlashcardClick.bind(this);
+    this.returnClick = this.returnClick.bind(this);
   }
   /**
  * @return {ReactElement}
@@ -67,6 +68,7 @@ class Home extends Component {
     } else if (this.state.step === 3) {
       return (
         <Flashcard
+          returnClick={this.returnClick}
           handleClick={this.handleFlashcardClick}
           setChoice={this.state.setChoice}
           currentCard={this.state.currentCard}
@@ -114,6 +116,15 @@ class Home extends Component {
     } else {
       this.setState({currentCard: 0});
     }
+  }
+
+  /**
+   *
+   *
+   * @memberof Home
+   */
+  returnClick() {
+    this.setState({step: 2});
   }
 }
 
