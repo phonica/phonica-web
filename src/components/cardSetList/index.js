@@ -53,6 +53,7 @@ const cardSetsQuery = gql`
       name
       id
       flashcards {
+        order
         id
         grapheme {
           grapheme

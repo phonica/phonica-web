@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 import {Card, Button, CardTitle} from 'react-mdl';
+import sortBy from 'lodash.sortby';
 
 const flashcard = ({
   returnClick,
@@ -13,7 +14,7 @@ const flashcard = ({
   if (loading) {
     return <p>Loading...</p>;
   } else {
-    const cardSet = cardSets[0].flashcards;
+    const cardSet = sortBy(cardSets[0].flashcards, ['order']);
     const numberOfCards = cardSet.length;
     const fc = cardSet[currentCard];
     return (
@@ -59,6 +60,7 @@ const flashcardQuery = gql`
       name
       id
       flashcards {
+        order
         id
         grapheme {
           grapheme

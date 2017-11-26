@@ -30,9 +30,9 @@ class Home extends Component {
     this.returnClick = this.returnClick.bind(this);
   }
   /**
- * @return {ReactElement}
- * @memberof Home
- */
+   * @return {ReactElement}
+   * @memberof Home
+   */
   render() {
     if (this.state.step === 1) {
       return (
@@ -77,11 +77,11 @@ class Home extends Component {
     }
   }
   /**
- * Click handler
- * @param {event} e - the click event
- * return {void}
- * @memberof Home
- */
+   * Click handler
+   * @param {event} e - the click event
+   * return {void}
+   * @memberof Home
+   */
   handleSchemeChoice(e) {
     this.setState({schemeChoice: e.currentTarget.id, step: 2});
   }
@@ -94,18 +94,6 @@ class Home extends Component {
   }
 
   /**
-   *
-   *
-   * @param {any} length
-   * @memberof Home
-   */
-  //   getSetLength(length) {
-  //     this.setState({cardSetLength: length});
-  //   }
-
-  /**
-   *
-   *
    * @param {any} e
    * @param {any} length
    * @memberof Home
@@ -119,8 +107,6 @@ class Home extends Component {
   }
 
   /**
-   *
-   *
    * @memberof Home
    */
   returnClick() {
