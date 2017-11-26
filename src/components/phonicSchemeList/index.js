@@ -9,7 +9,7 @@ const phonicSchemesList = (props) => {
   } else {
     return props.phonicSchemes.map((ps) => (
       <div
-        key={ps.id}
+        key={ps.uuid}
         style={{
           justifyContent: 'center',
         }}
@@ -19,7 +19,7 @@ const phonicSchemesList = (props) => {
             <Card
               shadow={1}
               style={{width: '256px', height: '100px', background: '#fff'}}
-              id={ps.id}
+              id={ps.uuid}
               onClick={props.onClick}
             >
               <CardTitle>
@@ -43,7 +43,7 @@ const phonicSchemesList = (props) => {
 const phonicSchemeListQuery = gql`
   query PhonicsSchemeQuery {
     phonicSchemes {
-      id
+      uuid
       name
       description
     }

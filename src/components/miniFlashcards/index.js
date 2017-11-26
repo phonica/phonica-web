@@ -7,7 +7,7 @@ const Flashcards = (props) => {
   );
   const orderedGraphemes = sortBy(graphemes, ['order']);
   return orderedGraphemes.map((gr) => (
-    <div key={gr.id} id={gr.id} className="demo-grid-ruler">
+    <div key={gr.uuid} id={gr.uuid} className="demo-grid-ruler">
       <p style={{margin: '5px'}}>{gr.grapheme.grapheme}</p>
     </div>
   ));

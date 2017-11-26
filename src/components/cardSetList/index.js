@@ -11,8 +11,8 @@ const cardSetList = (props) => {
   } else {
     return props.cardSets.map((cs) => (
       <div
-        key={cs.id}
-        id={cs.id}
+        key={cs.uuid}
+        id={cs.uuid}
         onClick={props.handleSetChoice}
         style={{margin: 'auto'}}
       >
@@ -51,10 +51,10 @@ const cardSetsQuery = gql`
   query cardSetsQuery($schemeChoice: ID) {
     cardSets(phonicSchemeUuid: $schemeChoice) {
       name
-      id
+      uuid
       flashcards {
         order
-        id
+        uuid
         grapheme {
           grapheme
         }

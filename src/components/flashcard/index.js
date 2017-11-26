@@ -19,8 +19,8 @@ const flashcard = ({
     const fc = cardSet[currentCard];
     return (
       <Card
-        id={fc.id}
-        key={fc.id}
+        id={fc.uuid}
+        key={fc.uuid}
         shadow={1}
         style={{
           justifyContent: 'center',
@@ -58,10 +58,10 @@ const flashcardQuery = gql`
   query flashcardQuery($setChoice: ID) {
     cardSets(uuid: $setChoice) {
       name
-      id
+      uuid
       flashcards {
         order
-        id
+        uuid
         grapheme {
           grapheme
         }
